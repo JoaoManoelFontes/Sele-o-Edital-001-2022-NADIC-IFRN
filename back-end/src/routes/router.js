@@ -10,5 +10,6 @@ router.get('/Poll/:access_id', PollController.index)
 
 router.post('/Candidate', CandidateController.store);
 
+router.post('/Voter/:candidate_id', VoterController.store);
 router.get('/Voter/:candidate_id', VoterController.index);
 module.exports = router;

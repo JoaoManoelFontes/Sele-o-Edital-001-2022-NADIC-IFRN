@@ -17,7 +17,7 @@ module.exports = {
         }
 
         await Voter.create({cpf, candidate_id});
-        return res.status(200);
+        return res.status(200).json({"deu":"certo"});
     },
 
 
@@ -29,10 +29,7 @@ module.exports = {
                 association:"voters"
             }
         })
-        candidate.voters.forEach(voters => {
-            console.log(voters.id);
-        });
-        return res.send(candidate.voters)
+        return res.send(candidate)
 
 
     }
