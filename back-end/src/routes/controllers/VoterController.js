@@ -17,7 +17,7 @@ module.exports = {
         }
 
         await Voter.create({cpf, candidate_id});
-        return res.status(200).json({"deu":"certo"});
+        return res.status(200);
     },
 
 
