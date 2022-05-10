@@ -1,0 +1,20 @@
+.main{
+  position: absolute;
+  top: 15%;
+  left: 19%;
+  width: 50em;
+  height: 30em;
+  border: 2px solid;
+  border-radius: 20px;
+  box-shadow: 0px 10px 10px #0000007e;
+  text-align: center;
+  background-color: #64656F;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title{
+  font-size: larger;
+}
