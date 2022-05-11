@@ -6,7 +6,7 @@
     <h3>Na pasta back-end:</h3>
     <li>Abra o cmd e execute <code>npm install</code></li>
     <li>Crie um arquivo .env com as informações do seu banco de dados</li>
-        <ol>
+        <ul>
             <li>DIALECT=""</li>
             <li>HOST=""</li>
             <li>ROOT="seu_username"</li>
