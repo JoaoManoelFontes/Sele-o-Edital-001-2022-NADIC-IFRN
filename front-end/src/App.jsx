@@ -1,13 +1,13 @@
 import './App.css';
-import { Form } from './components/form';
+import { Form } from './components/homeForm/form';
 
 function App() {
   
   return (
       <main className="main">
         <div className='title'>
-          <h1>ELEIÇÕES</h1>
-          <h1>NADIC</h1>
+          <h1 className="display-3">Eleições</h1>
+          <h1 className="display-3">Nadic</h1>
         </div>
         <div>
           <Form />
