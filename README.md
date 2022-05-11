@@ -12,6 +12,6 @@
             <li>ROOT="seu_username"</li>
             <li>PASSWORD="sua_senha"</li>
             <li>DATABASE="nome_do_seu_banco_de_dados"</li>
-        </ol>
+        </ul>
     <li>No prompt de comando, rode os comandos <code> npx sequelize db:create </code> e <code> npx sequelize db:migrate </code></li>
     </ul>
