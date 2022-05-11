@@ -18,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Routes>
       <Route path='/' element={<App />}></Route>
       <Route path='/accessPoll' element={<AccessPoll />}></Route>
+      <Route path='/createPoll' element={<App />}></Route>
     </Routes>
   </BrowserRouter>
 )
