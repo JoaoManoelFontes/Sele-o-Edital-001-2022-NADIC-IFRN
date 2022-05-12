@@ -12,13 +12,16 @@ import './index.css'
 
 import App from './App'
 import AccessPoll from './components/accessPoll/accessPoll';
+import { CreatePoll } from './components/createPoll/createPoll';
+import { RegisterCandidate } from './components/registerCandidate/registerCandidate';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<App />}></Route>
       <Route path='/accessPoll' element={<AccessPoll />}></Route>
-      <Route path='/createPoll' element={<App />}></Route>
+      <Route path='/createPoll' element={<CreatePoll />}></Route>
+      <Route path='/registerCandidate' element={<RegisterCandidate />}></Route>
     </Routes>
   </BrowserRouter>
 )

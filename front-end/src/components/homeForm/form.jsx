@@ -2,6 +2,7 @@ import {useForm} from 'react-hook-form';
 import api from '../../defaults/api';
 import { useNavigate } from 'react-router-dom';
 import { Button, Input, FormGroup } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './form.css';
 
 export function Form(){
@@ -22,13 +23,16 @@ export function Form(){
 
     return (
         <div className='form'>
-            <Button id='btn' color='secondary'><h3>Criar Enquete</h3></Button>
+            <Link to="/createPoll"><Button id='btn' color='secondary'>
+                <h3>Criar Enquete</h3>
+            </Button></Link>
         
             <form onSubmit={handleSubmit(onSubmit)}>
                 <FormGroup>
                 <input type="text" id='input' name="access_id" {...register('access_id')} placeholder='digite o id de acesso' />
-                <Input id='btn' type="submit" value="Votar em uma existente" />
                 </FormGroup>
+                <Input id='btn' type="submit" value="Votar em uma existente" />
+                
             </form>
         </div>
     )
