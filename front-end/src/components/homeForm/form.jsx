@@ -1,7 +1,7 @@
 import {useForm} from 'react-hook-form';
 import api from '../../defaults/api';
 import { useNavigate } from 'react-router-dom';
-import { Button, Input, FormGroup } from 'reactstrap';
+import { Button, FormGroup } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './form.css';
 
@@ -31,7 +31,7 @@ export function Form(){
                 <FormGroup>
                 <input type="text" id='input' name="access_id" {...register('access_id')} placeholder='digite o id de acesso' />
                 </FormGroup>
-                <Input id='btn' type="submit" value="Votar em uma existente" />
+                <input id='btn' type="submit" value="Votar em uma existente" />
                 
             </form>
         </div>

@@ -11,5 +11,22 @@ module.exports = {
         await candidate.addPoll(poll);
 
         return res.status(200).json({candidate, poll})
-    }
+    },
+
+    async index(req, res){
+        const { access_id } = req.params
+
+        const candidates = await Poll.findOne({where:{ 
+            access_id }, include:{
+                association: "candidates",
+                 include:{
+                    association: "voters"
+                }
+            }, attributes:[]
+        });
+
+        return res.json(candidates)
+    },
+
+  
 }

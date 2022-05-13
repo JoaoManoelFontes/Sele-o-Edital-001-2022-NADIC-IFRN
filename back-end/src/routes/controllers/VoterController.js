@@ -16,20 +16,19 @@ module.exports = {
             .json({ error: "candidato não encontrado"});
         }
 
-        await Voter.create({cpf, candidate_id});
-        return res.status(200);
+        const voter = await Voter.create({cpf, candidate_id});
+        return res.status(200).json(voter);
     },
 
 
     async index(req, res){
-        const {candidate_id} = req.params;
-
-        const candidate = await Candidate.findByPk(candidate_id, {
+        const {candidate_id} = req.params
+        const candidates = await Candidate.findByPk(candidate_id,{
             include:{
                 association:"voters"
             }
         })
-        return res.send(candidate)
+        return res.send(candidates)
 
 
     }

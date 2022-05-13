@@ -26,7 +26,7 @@ module.exports = {
                 attributes:[],
                 through: { attributes: [] },
             },
-            attributes:["name","cpf","birthday","address"]
+            attributes:["name","cpf","birthday","address","id"]
         })
 
         return res.status(200).json({poll,candidates})
