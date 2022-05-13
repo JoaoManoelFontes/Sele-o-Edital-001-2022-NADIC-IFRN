@@ -5,6 +5,8 @@ import { FormGroup, Label, Spinner } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import "./accessPoll.css";
 import api from "../../defaults/api";
+
+
 export default function CreatePoll() {
   const { register, handleSubmit } = useForm();
   const { state } = useLocation();
@@ -26,9 +28,9 @@ export default function CreatePoll() {
               cpf
             })
             .then(({data})=>{
-                console.log(data);
+                const resultPoll = {data, poll:state.data }
                 navigate("/resultPoll",{state:{
-                    data, poll:state.data
+                    resultPoll
                 }})
             })
           }

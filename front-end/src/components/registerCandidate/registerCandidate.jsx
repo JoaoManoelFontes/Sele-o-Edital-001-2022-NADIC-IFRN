@@ -14,7 +14,7 @@ export function RegisterCandidate(){
         api.post('/Candidate',{
              name, cpf, address, birthday, access_id, final_date
         }).then(({ data })=>{
-            console.log(data);
+            window.location.reload(false);
         })
     }
     

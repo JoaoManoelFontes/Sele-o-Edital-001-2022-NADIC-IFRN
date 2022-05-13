@@ -6,6 +6,7 @@ const CandidateController = require('./controllers/CandidateController');
 const VoterController = require('./controllers/VoterController');
 
 router.post('/Poll', PollController.store);
+router.get('/deletePoll/:access_id', PollController.delete)
 router.get('/Poll/:access_id', PollController.index)
 
 router.post('/Candidate', CandidateController.store);

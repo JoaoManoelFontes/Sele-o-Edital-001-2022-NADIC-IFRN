@@ -7,11 +7,12 @@ import './resultPoll.css'
 export function ResultPoll(){
 
     const { state } = useLocation();
+    console.log();
     let counter = 0;
     const [voters, setVoters] = useState([])
 
     useEffect(()=>{
-        api.get('/Candidate/'+state.poll.poll.access_id)
+        api.get('/Candidate/'+state.resultPoll.poll.poll.access_id)
         .then(({data})=>{            
             setVoters(data.candidates)
         })
@@ -20,7 +21,8 @@ export function ResultPoll(){
     return(
         <main className='main'>
             <div className='title'>
-                <h1 className='display-3'> Resultados: <br/> {state.poll.poll.name} </h1> 
+                <h1 className='display-3'> Resultados: {state.resultPoll.poll.poll.name} <br/> </h1> 
+                <p className='lead'>Encerra em: {state.resultPoll.poll.poll.final_date}</p>
             </div>
             <div className='form'>
                 {voters.map(element => { 

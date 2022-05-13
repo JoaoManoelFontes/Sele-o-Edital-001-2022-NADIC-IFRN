@@ -30,5 +30,17 @@ module.exports = {
         })
 
         return res.status(200).json({poll,candidates})
+    },
+
+    async delete(req, res){
+        const {access_id} = req.params;
+
+        const poll = await Poll.findOne({where:{access_id}, include:{
+            association:'candidates'
+        }})
+
+        await poll.destroy()
+
+        return res.json({erro:"A enquete se encerrou em:"+poll.final_date})
     }
 }
