@@ -19,6 +19,11 @@ module.exports = {
         const poll = await Poll.findOne({
             where:{access_id}
         })
+
+        if(!poll){
+            return res.send(false)
+        }
+
         const candidates = await Candidate.findAll({
             include:{
                 association:"polls",
@@ -39,8 +44,6 @@ module.exports = {
             association:'candidates'
         }})
 
-        await poll.destroy()
-
-        return res.json({erro:"A enquete se encerrou em:"+poll.final_date})
+        return res.json(poll.candidates)
     }
 }

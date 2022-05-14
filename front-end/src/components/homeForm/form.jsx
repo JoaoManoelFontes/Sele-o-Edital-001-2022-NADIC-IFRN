@@ -6,7 +6,7 @@ import { verifyDate } from '../../defaults/date';
 import { Link } from 'react-router-dom';
 import './form.css';
 
-export function Form(){
+export default function Form(){
 
     const { register, handleSubmit }= useForm()
     const navigate = useNavigate()
@@ -14,15 +14,18 @@ export function Form(){
     const onSubmit = ({access_id}) =>{
         api.get('Poll/'+access_id)
         .then(({data})=>{
-
-            if(verifyDate(data.poll.final_date)){
-
+            if(data === false){
+                window.location.reload(false);    
+            }
+            else if(verifyDate(data.poll.final_date)){
+                
                 navigate("/accessPoll",{state:{
                     data
                 }}) 
 
-            }else{
-                console.log("A enquete se encerrou em "+ data.poll.final_date);
+            }
+            else{                
+                window.location.reload(false);    
             }
         })
     }
@@ -34,7 +37,7 @@ export function Form(){
                 <h3>Criar Enquete</h3>
             </Button></Link>
         
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} >
                 <FormGroup>
                 <input type="text" id='input' name="access_id" {...register('access_id')} placeholder='digite o id de acesso' />
                 </FormGroup>

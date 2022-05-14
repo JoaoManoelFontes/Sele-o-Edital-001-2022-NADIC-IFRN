@@ -7,10 +7,9 @@ import './resultPoll.css'
 export function ResultPoll(){
 
     const { state } = useLocation();
-    console.log();
     let counter = 0;
     const [voters, setVoters] = useState([])
-
+    console.log(state);
     useEffect(()=>{
         api.get('/Candidate/'+state.resultPoll.poll.poll.access_id)
         .then(({data})=>{            

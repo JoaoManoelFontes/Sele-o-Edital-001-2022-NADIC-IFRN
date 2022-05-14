@@ -11,13 +11,21 @@ export function CreatePoll(){
 
 
     function onSubmit({name, access_id, final_date}){
-        api.post('/Poll',{
-            name, final_date, access_id
-        }).then(({ data })=>{
-            navigate("/registerCandidate",{state:{
-                poll:data.poll
-            }})
+        api.get('/Poll/'+access_id).then(({ data })=>{
+            if (data === false){
+                api.post('/Poll',{
+                    name, final_date, access_id
+                }).then(({ data })=>{
+                    navigate("/registerCandidate",{state:{
+                        poll:data.poll
+                    }})
+                })
+            }else{
+                window.location.reload(false);    
+                console.log("id de acesso já existente");
+            }
         })
+        
         
     }
 

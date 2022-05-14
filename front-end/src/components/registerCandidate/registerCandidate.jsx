@@ -1,5 +1,6 @@
 import {useLocation} from 'react-router-dom';
-import { FormGroup, Label } from 'reactstrap';
+import { FormGroup, Label, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import './registerCandidate.css';
 import api from '../../defaults/api';
@@ -20,6 +21,7 @@ export function RegisterCandidate(){
     
     return(
         <main className='main'>
+            
             <div className='form'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <FormGroup>
@@ -45,7 +47,9 @@ export function RegisterCandidate(){
                 <h1 className='display-3'>Cadastrando <br/> Candidatos</h1>
                     <h3 className='lead'>Enquete: <br/>
                         Nome: {state.poll.name} <br/> Id de acesso: {access_id} <br/> Encerramento: {final_date} </h3>
+                <Link to='/'><Button  color="secondary" >Home</Button></Link>
             </div>
+            
         </main>
         
     )
