@@ -27,6 +27,7 @@ export default function CreatePoll() {
               cpf
             })
             .then(({data})=>{
+              
                 const resultPoll = {data, poll:state.data }
                 navigate("/resultPoll",{state:{
                     resultPoll
@@ -40,9 +41,9 @@ export default function CreatePoll() {
           cpf
         })
         .then(({data})=>{
-            console.log(data);
+          const resultPoll = {data, poll:state.data }
             navigate("/resultPoll",{state:{
-                data
+                resultPoll
             }}) 
         })  
       }
