@@ -20,7 +20,6 @@ export default function CreatePoll() {
     api.get('Voter/'+radio).then(({ data })=>{
       if(data.voters.length!=0){
         data.voters.forEach(element => {
-          console.log(element);
           if(element.cpf === cpf){
             navigate('/')
           }else{

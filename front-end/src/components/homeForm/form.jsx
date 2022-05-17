@@ -18,7 +18,6 @@ export default function Form(){
                 window.location.reload(false);    
             }
             else if(verifyDate(data.poll.final_date)){
-                
                 navigate("/accessPoll",{state:{
                     data
                 }}) 
