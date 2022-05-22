@@ -2,8 +2,9 @@ import {useLocation} from 'react-router-dom';
 import { FormGroup, Label, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import {useForm} from 'react-hook-form';
-import './registerCandidate.css';
 import api from '../../defaults/api';
+import { Main, FormDiv, Input, Title } from './styled';
+
 
 export function RegisterCandidate(){
 
@@ -20,37 +21,37 @@ export function RegisterCandidate(){
     }
     
     return(
-        <main className='main'>
+        <Main>
             
-            <div className='form'>
+            <FormDiv>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <FormGroup>
                         <Label for='name'>Nome do Candidato</Label><br/>
-                        <input type="text" id='input' name="name" {...register('name')} placeholder='Digite um nome' />
+                        <Input type="text" name="name" {...register('name')} placeholder='Digite um nome' />
                     </FormGroup>
                     <FormGroup>
                         <Label for='cpf'>Cpf:</Label><br/>
-                        <input type="text" id='input' name="cpf" {...register('cpf')} placeholder='Digite um cpf' />
+                        <Input type="text" name="cpf" {...register('cpf')} placeholder='Digite um cpf' />
                     </FormGroup>
                     <FormGroup>
                         <Label for='address'>Endereço:</Label><br/>
-                        <input type="text" id='input' name="address" {...register('address')} placeholder='Digite um endereço' />
+                        <Input type="text" id='input' name="address" {...register('address')} placeholder='Digite um endereço' />
                     </FormGroup>
                     <FormGroup>
                         <Label for='birthday'>Data de nascimento:</Label><br/>
-                        <input type="date" id='input' name='birthday' {...register('birthday')} />
+                        <Input type="date" name='birthday' {...register('birthday')} />
                     </FormGroup>
                     <input id='btn' type="submit" value="Cadastrar" />
                 </form>
-            </div>
-            <div className='title'>
+            </FormDiv>
+            <Title>
                 <h1 className='display-3'>Cadastrando <br/> Candidatos</h1>
-                    <h3 className='lead'>Enquete: <br/>
-                        Nome: {state.poll.name} <br/> Id de acesso: {access_id} <br/> Encerramento: {final_date} </h3>
+                <h3 className='lead'>
+                    Nome: {state.poll.name} <br/> Id de acesso: {access_id} <br/> Encerramento: {final_date} </h3>
                 <Link to='/'><Button  color="secondary" >Home</Button></Link>
-            </div>
+            </Title>
             
-        </main>
+        </Main>
         
     )
 }

@@ -1,8 +1,8 @@
 import {useForm} from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
-import { FormGroup, Label } from 'reactstrap';
+import { Form, FormGroup, Label } from 'reactstrap';
 import api from '../../defaults/api';
-import './createPoll.css'
+import {Main, FormDiv, Input, Submit, Title} from './styled';
 
 export function CreatePoll(){
 
@@ -30,28 +30,28 @@ export function CreatePoll(){
     }
 
     return(
-        <main className="main">
-            <div className="form">
+        <Main>
+            <FormDiv>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <FormGroup>
                         <Label for='name'>Nome da enquete:</Label><br/>
-                        <input type="text" id='input' name="name" {...register('name')} placeholder='Digite um nome' />
+                        <Input type="text" name="name" {...register('name')} placeholder='Digite um nome' />
                     </FormGroup>
                     <FormGroup>
                         <Label for='access_id'>Id de acesso:</Label><br/>
-                        <input type="password" id='input' name="access_id" {...register('access_id')} placeholder='Digite uma senha' />
+                        <Input type="password" name="access_id" {...register('access_id')} placeholder='Digite uma senha' />
                     </FormGroup>
                     <FormGroup>
                         <Label for='final_date'>Data de encerramento:</Label><br/>
-                        <input type="date" id='input' name='final_date' {...register('final_date')} />
+                        <Input type="date" name='final_date' {...register('final_date')} />
                     </FormGroup>
-                    <input id='btn' type="submit" value="Criar Enquete" />
+                    <Submit type="submit" value="Criar Enquete" />
                 </form>
-            </div>
-            <div className='title'>               
+            </FormDiv>
+            <Title>               
                     <h1 className="display-3">Criando <br/> Enquete</h1>
                     <h3 className='lead'>Eleições Nadic</h3>
-            </div>
-        </main>
+            </Title>
+        </Main>
     )
 }

@@ -4,7 +4,9 @@ import { useForm } from "react-hook-form";
 import { FormGroup, Label, Spinner } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import "./accessPoll.css";
-import api from "../../defaults/api";
+import api from "../../defaults/api"; 
+import {Main, FormDiv, Input, Submit, Radio} from './styled';
+
 
 
 export default function CreatePoll() {
@@ -54,21 +56,20 @@ export default function CreatePoll() {
 }
 
   return (
-    <main className="main">
-      <div className="form">
+    <Main>
+      <FormDiv>
         <div>
           <h1 className="display-3">{name}</h1>
           <p>Encerramento: {final_date}</p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          {candidates[0].map((candidate) => {
+          {React.Children.toArray(candidates[0].map((candidate) => {
             return (
-              <div className="radio">
+              <Radio>
                 <FormGroup check>
                   <Label check>
                     <input
-                      key={candidate.id}
                       {...register("radio")}
                       type="radio"
                       id="radioInput"
@@ -81,22 +82,21 @@ export default function CreatePoll() {
                   </Label>
                 </FormGroup>
                 <hr />
-              </div>
+              </Radio>
             );
-          })}
+          }))}
           <FormGroup>
             <Label for="cpf">Seu cpf:</Label>
-            <input
+            <Input
               type="text"
               {...register("cpf")}
-              id="input"
               name="cpf"
               placeholder="Digite um cpf"
             />
           </FormGroup>
-          <input id="btn" type="submit" value="Votar" />
+          <Submit type="submit" value="Votar" />
         </form>
-      </div>
-    </main>
+      </FormDiv>
+    </Main>
   );
 }

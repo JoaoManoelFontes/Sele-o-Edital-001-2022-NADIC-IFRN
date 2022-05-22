@@ -1,4 +1,6 @@
-.main{
+import styled from 'styled-components';
+
+export const Main = styled.main`
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -16,9 +18,9 @@
     justify-content: space-around;
     align-items: center;
     padding: 2%;
-  } 
+`
 
-  .form{
+export const Result = styled.div`
     width: 90%;
     height: 100%;
     background-color: #BFBABA;
@@ -29,11 +31,10 @@
     justify-content:space-around;
     flex-direction: column;
     flex-wrap: wrap;
+`
 
-}
-
-.title{
+export const Title = styled.div`
     font-size: larger;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.527);
-  }
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.527);
+    `

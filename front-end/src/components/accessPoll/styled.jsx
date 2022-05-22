@@ -1,4 +1,6 @@
-.main{
+import styled from 'styled-components';
+
+export const Main = styled.main`
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -16,10 +18,9 @@
     justify-content: space-around;
     align-items: center;
     padding: 2%;
-  } 
-
-  .form{
-    width: 90%;
+`
+export const FormDiv = styled.div`
+    width: 100%;
     height: 100%;
     background-color: #BFBABA;
     border-radius: 10px;
@@ -27,13 +28,24 @@
     display: flex;
     align-items: center;
     justify-content:space-around;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
+`
 
-}
+export const Submit = styled.input`
+    padding: 8px 10px;
+    width: 20%;
+    box-sizing: border-box;
+    border-radius: 50px;
+    border: #BFBABA;
+`
+export const Input = styled.input`
+    padding: 8px 10px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    border: #BFBABA;
+`
 
-.title{
-    font-size: larger;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.527);
-  }
+export const Radio = styled.div`
+    text-align: left;
+`
