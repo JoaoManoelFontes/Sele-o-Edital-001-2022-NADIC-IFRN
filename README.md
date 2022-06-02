@@ -14,5 +14,11 @@
             <li>DATABASE="nome_do_seu_banco_de_dados"</li>
         </ul>
     <li>No prompt de comando, rode os comandos <code> npx sequelize db:create </code> e <code> npx sequelize db:migrate </code></li>
+    <h3>Na pasta front-end:</h3>
+    <li>Execute npm install para baixar as dependencias</li>
+    <li>Rode no terminal <code>npm run dev</code>, e acesse o <a href="http://localhost:3000">site</a> no seu browser</li>
     </ul>
+    
+        
     <h3><a href="https://www.figma.com/file/GHPlaiqVDUVcRIa6Hbo30R/Elei%C3%A7%C3%B5es_Nadic?node-id=0%3A1">Link</a> para o protótipo do projeto no figma</h3>
+    
