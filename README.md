@@ -17,8 +17,9 @@
     <h3>Na pasta front-end:</h3>
     <li>Execute npm install para baixar as dependencias</li>
     <li>Rode no terminal <code>npm run dev</code>, e acesse o <a href="http://localhost:3000">site</a> no seu browser</li>
+    <h3><a href="https://www.figma.com/file/GHPlaiqVDUVcRIa6Hbo30R/Elei%C3%A7%C3%B5es_Nadic?node-id=0%3A1">Link</a> para o protótipo do projeto no figma</h3>
     </ul>
     
         
-    <h3><a href="https://www.figma.com/file/GHPlaiqVDUVcRIa6Hbo30R/Elei%C3%A7%C3%B5es_Nadic?node-id=0%3A1">Link</a> para o protótipo do projeto no figma</h3>
+    
     
